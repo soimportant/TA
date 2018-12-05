@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+
+int main()
+{
+	int num = 0;
+	
+	printf("Please enter an integer: ");
+	scanf("%d", &num);
+
+	int result = num > 0 ? num : num - 2 * num;
+	printf("The Absolute value is %d\n", result);
+
+	system("PAUSE");
+	return 0;
+}

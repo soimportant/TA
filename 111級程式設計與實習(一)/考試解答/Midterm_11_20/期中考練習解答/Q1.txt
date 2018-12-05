@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int count[11] = {0};
+    /* 計算次數的array */
+    /* index range: [0] - [10] */
+
+    int num = 0;
+    while(1){
+        scanf("%d", &num);
+        if(num == -1)
+            break;
+        /* 停止條件隨意 這裡為輸入到-1結束 */
+
+        count[num]++;
+        /* 輸入是多少 該位置的值+1 */
+        /* e.g. num = 1 --> arr[1]++ */   
+    }
+
+    for(int i = 1; i<=10; i++){
+        printf("%d出現了%d次\n", i, count[i]);
+        /* 輸出次數 */
+    }
+
+    system("PAUSE");
+    return 0;
+}

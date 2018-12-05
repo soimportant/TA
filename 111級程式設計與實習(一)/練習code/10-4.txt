@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#pragma warning(disable:4996)
+
+
+
+int main() {
+
+	char account[3][50] = { "A1055501", "A1075521", "A1075546" };
+	char password[3][50] = { "nuk0318", "abcde", "12345" };
+	char name[3][50] = { "黃宬瑋", "高嘉君", "阮祈翰" };
+
+	for (int i = 0; i < 3; i++) {
+		printf("第%d筆資料:\n", i + 1);
+		printf("Name: %s\n", name[i]);
+		printf("Account : %s\n", account[i]);
+		printf("password: %s\n\n", password[i]);
+	}
+
+	printf("請輸入要修改哪一筆資料:");
+
+	int n = 0;
+	scanf("%d", &n);
+
+	char acc[50], pwd[50], N[50];
+
+	printf("請輸入更改後的名字:");
+	scanf("%s", N);
+	printf("請輸入更改後的帳號:");
+	scanf("%s", acc);
+	printf("請輸入更改後的密碼:");
+	scanf("%s", pwd);
+
+
+	strcpy(account[n - 1], acc);
+	strcpy(password[n - 1], pwd);
+	strcpy(name[n - 1], N);
+
+	printf("修改後:\n\n");
+	for (int i = 0; i < 3; i++) {
+		printf("第%d筆資料:\n", i + 1);
+		printf("Name: %s\n", name[i]);
+		printf("Account : %s\n", account[i]);
+		printf("password: %s\n", password[i]);
+	}
+
+	system("PAUSE");
+	return 0;
+}

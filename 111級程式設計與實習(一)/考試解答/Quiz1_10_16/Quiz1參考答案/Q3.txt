@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+int main(){
+    int n, count = 0, sum = 0, max = -1, min = 10005;
+
+    while(1){
+        printf("輸入一個正整數(到0結束): ");
+        scanf("%d", &n);
+
+        if(n == 0) //輸入等於0 --> 跳出迴圈
+            break;
+
+        count++;   //計算總共有幾個數
+        sum += n;  //計算總和
+
+        if(n > max)
+            max = n;
+        if(n < min)
+            min = n;
+
+    }
+    printf("\n平均 = %.3f\n", (double)sum/(double)count);
+    printf("最大值 = %d\n", max);
+    printf("最小值 = %d\n", min);
+
+    system("PAUSE");
+    return 0;
+}

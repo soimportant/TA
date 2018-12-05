@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#pragma warning(disable:4996)
+
+
+
+int main() {
+
+	char str[50] = { 0 };
+	scanf("%s", &str);
+
+	int len = strlen(str);
+
+	for (int i = 0; i < len / 2; i++) {
+		char ch = str[i];
+		str[i] = str[len - i - 1];
+		str[len - i - 1] = ch;
+	}
+
+	printf("%s\n", str);
+
+	system("PAUSE");
+	return 0;
+
+}

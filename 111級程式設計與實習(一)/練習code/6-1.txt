@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+
+long long int power(int m, int n) {
+	long long int result = 1;
+	for (int i = 0; i < n; i++)
+	{
+		result *= m;
+	}
+	return result;
+}
+
+int main()
+{
+	int m, n;
+	printf("輸入底數 m 跟指數 n : ");
+	scanf("%d %d", &m, &n);
+
+	printf("%d的%d次方 = %lld\n", m, n, power(m, n));
+
+	system("PAUSE");
+	return 0;
+}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#pragma warning(disable:4996)
+
+
+
+int main() {
+
+	char str[] = "(hello, )world*csie)";
+
+	char delim[] = "(), *";
+	char *ptr = strtok(str, delim);
+
+	while (ptr != NULL) {
+		printf("%s\n", ptr);
+		ptr = strtok(NULL, delim);
+	}
+
+
+
+	system("PAUSE");
+	return 0;
+}

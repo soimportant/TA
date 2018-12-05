@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#pragma warning(disable:4996)
+
+
+
+int main() {
+
+	char str[50] = { 0 };
+
+	gets_s(str);
+	printf("\n");
+	printf("¤j¼g: ");
+	for (int i = 0; i < strlen(str); i++) {
+		printf("%c", toupper(str[i]));
+	}
+	printf("\n\n");
+
+	printf("¤p¼g: ");
+	for (int i = 0; i < strlen(str); i++) {
+		printf("%c", tolower(str[i]));
+	}
+	printf("\n");
+
+
+
+	system("PAUSE");
+	return 0;
+}

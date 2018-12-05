@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#pragma warning(disable:4996)
+
+int main() {
+	long long int num = 0;
+	double power = 0;
+
+	printf("請輸入一個整數: ");
+	scanf("%lld", &num);
+
+	while (num >= pow(2, power))
+		power++;
+
+	printf("二進位表示為:");
+
+	while (power > 0) {
+		power--;
+		if (num >= pow(2, power)) {
+			printf("1");
+			num -= pow(2, power);
+		}
+		else
+			printf("0");
+	}
+	printf("\n");
+
+	system("PAUSE");
+	return 0;
+}

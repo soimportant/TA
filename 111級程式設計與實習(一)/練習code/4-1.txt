@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+
+int main() {
+
+	int year = 0;
+	printf("請輸入西元年份: ");
+
+	scanf("%d", &year);
+
+	if (year % 400 == 0)
+	{
+		printf("西元%d年是閏年\n", year);
+	}
+	else if (year % 100 == 0)
+	{
+		printf("西元%d年是平年\n", year);
+	}
+	else if (year % 4 == 0)
+	{
+		printf("西元%d年是閏年\n", year);
+	}
+	else
+	{
+		printf("西元%d年是平年\n", year);
+	}
+
+
+	system("PAUSE");
+	return 0;
+}

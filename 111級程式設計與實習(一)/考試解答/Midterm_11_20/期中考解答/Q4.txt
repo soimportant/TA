@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#pragma warning(disable:4996)
+
+void print_array(int arr[], int size) {
+	printf("array contain:");
+	for (int i = 0; i < size; i++) {
+		printf(" %d", arr[i]);
+	}
+	printf("\n");
+}
+
+int main() {
+	srand(time(NULL));
+
+	int arr[15] = { 0 }, k = 0;
+	for (int i = 0; i < 15; i++) {
+		arr[i] = rand() % 51 + 25;
+	}
+	print_array(arr, 15);
+	printf("排序完成!!!\n");
+
+	for (int i = 0; i < 15; i++) {
+		for (int j = 1; j < 15; j++) {
+			if (arr[j - 1] > arr[j]) {
+				int temp = arr[j - 1];
+				arr[j - 1] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	print_array(arr, 15)
+	printf("請輸入要搜索的數k:");
+	scanf("%d", &k);
+	int min = 0, mid = 0, max = 14;
+	int flag = 0;
+	while (min <= max) {
+		mid = (min + max) / 2;
+		printf("k(%d)與arr[%d](%d)比對...\n", k, mid, arr[mid]);
+		if (arr[mid] == k) {
+			printf("找到了!!! %d在arr[%d]裡面\n", k, mid);
+			flag = 1;
+			break;
+		}
+		else if (arr[mid] < k) {
+			min = mid + 1;
+		}
+		else if (arr[mid] > k) {
+			max = mid - 1;
+		}
+	}
+	if (flag == 0) {
+		printf("陣列裡面沒有%d\n", k);
+	}
+	system("PAUSE");
+	return 0;
+}

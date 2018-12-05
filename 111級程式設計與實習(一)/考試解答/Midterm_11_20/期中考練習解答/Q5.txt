@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int gcd(int a, int b){
+    if(a % b == 0)
+        return b;
+    else
+        return gcd(b, a % b);
+    /* 輾轉相除法 */
+}
+
+int main(){
+    printf("輸入兩個數:");
+    int a = 0, b = 0;
+    scanf("%d %d", &a, &b);
+
+    printf("%d & %d的最小公倍數是%d\n", a, b, a*b/gcd(a, b));
+    
+    system("PAUSE");
+    return 0;
+}

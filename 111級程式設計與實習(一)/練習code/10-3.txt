@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#pragma warning(disable:4996)
+
+
+
+int main() {
+
+	char account[3][50] = { "A1055501", "A1075521", "A1075546" };
+	char password[3][50] = { "nuk0318", "abcde", "12345" };
+	char name[3][50] = { "黃宬瑋", "高嘉君", "阮祈翰" };
+
+	char acc[50], pwd[50];
+	printf("請輸入帳號:");
+	scanf("%s", acc);
+	//getchar();
+	printf("請輸入密碼:");
+	scanf("%s", pwd);
+
+	int flag = 0;
+
+	for (int i = 0; i < 3; i++) {
+		if (strcmp(acc, account[i]) == 0 && strcmp(pwd, password[i]) == 0) {
+			printf("登入成功 Hi, %s\n", name[i]);
+			flag = 1;
+		}
+	}
+
+	if (flag == 0) {
+		printf("登入失敗\n");
+	}
+
+	system("PAUSE");
+	return 0;
+}

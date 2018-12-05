@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#pragma warning(disable:4996)
+
+
+
+int main()
+{
+	char grade;
+
+	printf("請輸入成績: ");
+	scanf("%c", &grade);
+	switch (grade)
+	{
+	case 'A':
+		printf("太棒了\n");
+		break;
+	case 'B':
+	case 'C':
+		printf("做得好欸\n");
+		break;
+	case 'D':
+	case 'E':
+		printf("普普通通\n");
+		break;
+	case 'F':
+		printf("爛透了\n");
+		break;
+	}
+
+	
+
+	system("PAUSE");
+	return 0;
+}

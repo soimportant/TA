@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+
+int main() {
+
+	char str[50] = { 0 };
+	scanf("%s", &str);
+
+	int i = 0;
+
+	while (str[i] != '\0') {
+		printf("%c\n", str[i]);
+		i++;
+	}
+
+	system("PAUSE");
+	return 0;
+
+}

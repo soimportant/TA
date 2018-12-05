@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int arr[10] = {0};
+
+    /* 更進階一點 : 輸入n個數 --> 找到中位數 */
+
+    printf("輸入10個數:");
+    for(int i = 0; i<10; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    /* bubble sort */
+    int flag = 0;
+    int size = 10;
+    for(int i = 0; i<size; i++){
+        for(int j = 0; j<size-i-1; j++){
+            /* 想想j為什麼範圍是從[0-(size-i-1)] */
+            if(arr[j+1] < arr[j]){
+		        flag = 1;
+                int temp = arr[j+1];
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+	if(flag == 0)
+		break;
+	/* flag = 0 --> 排序完成 */
+    }
+    
+    printf("排序完成:");
+    for(int i = 0; i<10; i++){
+        printf(" %d", arr[i]);
+    }
+    printf("\n");
+    printf("中位數是%d %d\n", arr[4], arr[5]);
+
+    system("PAUSE");
+    return 0;
+}

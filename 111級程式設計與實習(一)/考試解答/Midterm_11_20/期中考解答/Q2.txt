@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#pragma warning(disable:4996)
+
+double func(double n) {
+	if (n == 1.0)
+		return 0;
+	else
+		return 1.0 / (n*(n - 1)) + func(n - 1);
+}
+
+int main() {
+	int num = 0;
+	scanf("%d", &num);
+
+	printf("%.5lf\n", func(num));
+
+	system("PAUSE");
+	return 0;
+}

@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#pragma warning(disable:4996)
+
+int main() {
+	int arr[51] = { 1 };
+	int n = 0;
+	double x = 0, y = 0;
+	double result = 0;
+
+	printf("請輸入n  代表(x+y)的n次方:");
+	scanf("%d", &n);
+
+	for (int i = 0; i <= n; i++) {
+		for (int j = i; j > 0; j--) {
+			arr[j] = arr[j - 1] + arr[j];
+		}
+	}
+	printf("(x+y)的%d次方係數為:", n);
+	for (int i = 0; i <= n; i++) {
+		printf(" %d", arr[i]);
+	}
+	printf("\n\n");
+
+	printf("請輸入x & y:");
+	scanf("%lf %lf", &x, &y);
+
+	for (int i = 0; i <= n; i += 2) {
+		result += arr[i] * pow(x, n - i)*pow(y, i);
+	}
+	printf("奇數項和為%lf\n", result);
+
+	system("PAUSE");
+	return 0;
+}

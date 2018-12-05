@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+
+int main()
+{
+	int n = 0;
+	printf("輸入一個整數: ");
+
+	scanf("%d", &n);
+	long long int result = 1;
+	for (int i = 1; i <= n; i++)
+	{
+		result *= i;
+	}
+	printf("%d! = %lld\n", n, result);
+
+	system("PAUSE");
+	return 0;
+
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int s = 0;
+    printf("請輸入秒數: ");
+    scanf("%d", &s);
+
+    printf("%d時", s/3600);
+    printf("%d分", (s/60)%60);
+    printf("%d秒\n", s%60);
+
+    system("PAUSE");
+    return 0;
+}

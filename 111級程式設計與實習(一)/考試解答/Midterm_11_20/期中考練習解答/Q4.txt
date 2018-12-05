@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int prime[1001] = {1, 1, 0};
+/* 计1 借计0 */
+
+void build_board(){
+    for(int i = 2; i<=1000; i++){
+        if(prime[i] == 1)
+            continue;
+        /* 琌计 计竒砆砞Θ1 */
+        /* 
+            i = 4 --> j = 4 8 12 16....
+            ぇ玡i = 2 j = 2 4 6 8 10 12 14 16...
+            ┮ぃノ狡縵Ω
+        */
+        
+        /* 
+            猔種j秨﹍琌i+i --> i*2 --> ゲ﹚琌计 
+            –Ω癹伴Чj = j + i --> j = i*3, i*4, i*5... until 1000
+        */
+        for(int j = i+i; j<=1000; j+=i){
+            prime[j] = 1;
+            /* 盢计竚砞Θ1 */
+        }
+    }
+}
+
+int main(){
+    build_board();
+    /* ㊣借计function */
+
+    printf("块计: ");
+    int num = 0;
+    scanf("%d", &num);
+
+    printf("%d借计:", num);
+    for(int i = 2; i<=num; i++){
+        if(num % i == 0 && prime[i] == 0)
+            printf(" %d", i);
+    }
+    printf("\n");
+    system("PAUSE");
+    return 0;
+}

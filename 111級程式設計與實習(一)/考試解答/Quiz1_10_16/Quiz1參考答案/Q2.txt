@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int a, b, c;
+    printf("輸入三角形的三邊長: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if(c < a + b){
+        printf("可以成為一個三角形\n");
+        if(a == b && b == c){
+            printf("是正三角形\n");
+        }
+        else if(a == b || b == c){
+            printf("是等腰三角形\n");
+        }
+        else if(a*a + b*b == c*c){
+            printf("是直角三角形\n");
+        }
+    }
+    else{
+        printf("不能成為一個三角形\n");
+    }
+
+    system("PAUSE");
+    return 0;
+}
