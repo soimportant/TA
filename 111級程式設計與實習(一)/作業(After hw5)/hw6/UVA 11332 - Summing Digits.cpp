@@ -17,9 +17,10 @@ int main() {
 		scanf("%d", &num);
 		if (num == 0)
 			break;
-		while (num >= 10) {
+		while (num >= 10) 
 			num = func(num);
-		}
+		//當 >= 10 --> 繼續送給func操作
+
 		printf("%d\n", num);
 	}
 	return 0;

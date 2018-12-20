@@ -10,7 +10,7 @@ int main() {
 			break;
 
 		int total = 0, flag = 0;
-
+		//flag表示當下是否有進位
 		while (a || b) {
 			if (a % 10 + b % 10 + flag >= 10) {
 				flag = 1;

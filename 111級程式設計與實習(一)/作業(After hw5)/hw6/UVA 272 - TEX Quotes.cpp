@@ -16,6 +16,7 @@ int main() {
 		}
 		else {
 			printf("%c", ch);
+			//非'\"'的字元 直接輸出
 		}
 	}
 	//system("PAUSE");

@@ -12,12 +12,16 @@ int main() {
 
 		int t1[26] = { 0 }, t2[26] = { 0 };
 
-		for (int i = 0; i < strlen(str1); i++) {
+		for (int i = 0; i < strlen(str1); i++) 
 			t1[str1[i] - 'a']++;
-		}
-		for (int i = 0; i < strlen(str2); i++) {
+		
+		for (int i = 0; i < strlen(str2); i++) 
 			t2[str2[i] - 'a']++;
-		}
+		
+		/* 
+			'a'-'z'的 ASCII碼是連續的，相減後即代表是第幾個字母
+			e.g. ('c' - 'a') --> 2
+		*/
 
 		for (int i = 0; i < 26; i++) {
 			int Min = t1[i] < t2[i] ? t1[i] : t2[i];
