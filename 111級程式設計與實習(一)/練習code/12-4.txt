@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+
+struct people {
+	char name[20];
+	double height;
+	double weight;
+};
+
+int main() {
+	FILE *fptr = fopen("record.txt", "rb+");
+	people p;
+
+	fread(&p, sizeof(p), 1, fptr);
+
+	printf("姓名: ");
+	printf("%s\n", p.name);
+
+	printf("身高: ");
+	printf("%lf\n", p.height);
+
+	printf("體重: ");
+	printf("%lf\n", p.weight);
+
+	fclose(fptr);
+
+	system("PAUSE");
+	return 0;
+}

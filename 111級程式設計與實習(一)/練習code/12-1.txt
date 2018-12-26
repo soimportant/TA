@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#pragma warning(disable:4996)
+
+struct people {
+	char name[20];
+	int sex;
+	/* 0 --> boy 1 --> girl */
+	double height;
+	double weight;
+};
+
+int main() {
+	FILE *fptr = fopen("record.txt", "w+");
+	people p;
+
+	printf("姓名: ");
+	scanf("%s", p.name);
+	fprintf(fptr, "%s\n", p.name);
+
+	printf("身高: ");
+	scanf("%lf", &p.height);
+	fprintf(fptr, "%lf\n", p.height);
+
+	printf("體重: ");
+	scanf("%lf", &p.weight);
+	fprintf(fptr, "%lf\n", p.weight);
+
+	fclose(fptr);
+
+	system("PAUSE");
+	return 0;
+}
